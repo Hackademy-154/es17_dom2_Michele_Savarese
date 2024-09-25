@@ -1,6 +1,11 @@
 // elementi catturati
 let cardsWrapper = document.querySelector(`#cardsWrapper`);
 let showContactsBtn = document.querySelector(`#showContactsBtn`);
+let addContactsBtn = document.querySelector(`#addContactsBtn`);
+let nameInput = document.querySelector(`#nameInput`);
+let numberInput = document.querySelector(`#numberInput`);
+let removeContactBtn = document.querySelector(`#removeContactBtn`)
+// console.dir(nameInput)
 // array
 
 let rubrica ={
@@ -27,9 +32,48 @@ showcontacts: function () {
         cardsWrapper.appendChild(div);
     }
     )
+},
+
+addContact : function (newName, newNumber){
+
+this.contacts.push({name: newName, number: newNumber});
+
+},
+
+removeContact: function (RemoveName) {
+let names = this.contacts.map((contact)=>contact.name);
+let index = names.indexOf(RemoveName);
+// console.log(index);
+
+if (index > -1) {
+    this.contacts.splice(index,1);
+
+} else {
+    alert(`Contatto non presente`)
 }
 
 }
+
+
+
+}
+
+addContactsBtn.addEventListener(`click`, ()=>
+{
+    if (nameInput.value !== '' && numberInput.value !== '') {
+        rubrica.addContact(nameInput.value, numberInput.value);
+
+    } else {
+        alert(`Inserisci un nome e un numero`)
+    }
+
+})
+
+removeContactBtn.addEventListener(`click`,()=>{
+    rubrica.removeContact(nameInput.value, numberInput.value);
+
+}
+)
 
 let aprirubrica = false;
 
@@ -43,7 +87,6 @@ showContactsBtn.addEventListener(`click`, ()=>{
         aprirubrica = false;
 
     }
-
 
 })
 

@@ -25,11 +25,11 @@
                 <div class="input-group mb-3">
                     
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Nome Contatto">
+                        <input id="nameInput" type="text" class="form-control" id="floatingInputGroup1" placeholder="Nome Contatto" required>
                         <label for="floatingInputGroup1">Nome Contatto</label>
                     </div>
                     <div class="form-floating">
-                        <input type="number" class="form-control" id="floatingInputGroup1" placeholder="Numero Contatto">
+                        <input id="numberInput" type="number" class="form-control" id="floatingInputGroup1" placeholder="Numero Contatto">
                         <label for="floatingInputGroup1">Numero Contatto</label>
                     </div>
                     
@@ -43,8 +43,8 @@
             
             <div class="col-12 col-md-3 ">
                 <button class="btn btnCustom">Cerca Contatto</button>
-                <button class="btn btnCustom">Aggiungi Contatto</button>
-                <button class="btn btnCustom">Rimuovi Contatto</button>
+                <button id="addContactsBtn" class="btn btnCustom">Aggiungi Contatto</button>
+                <button id="removeContactBtn" class="btn btnCustom">Rimuovi Contatto</button>
                 
             </div>
         </div>
